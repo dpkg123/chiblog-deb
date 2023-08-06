@@ -10,7 +10,7 @@ install-depends: yarn.lock
 build:
 	@yarn run build
 
-.PHONY : clean
+.PHONY: clean
 
 clean: chiblog/.output
 	-rm -rf chiblog/.output 
