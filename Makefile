@@ -12,5 +12,7 @@ build:
 
 .PHONY : clean
 
-clean :
+clean: chiblog/.output
 	-rm -rf chiblog/.output 
+run: chiblog/.output /usr/bin/node
+	node server/index.mjs
