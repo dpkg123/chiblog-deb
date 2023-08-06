@@ -10,9 +10,11 @@ install-depends: yarn.lock
 build:
 	@yarn run build
 
+run: chiblog/.output /usr/bin/node
+	node server/index.mjs -p 3000
+
+
 .PHONY: clean
 
 clean: chiblog/.output
 	-rm -rf chiblog/.output 
-run: chiblog/.output /usr/bin/node
-	node server/index.mjs -p 3000
