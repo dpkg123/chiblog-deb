@@ -4,7 +4,7 @@
 
 .PHONY: all
 
-ifdef (test -d node_modules)
+ifdef test -d node_modules
   all: build
 else
   all: install-depends build
