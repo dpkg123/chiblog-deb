@@ -4,15 +4,14 @@
 
 .PHONY: all
 
-ifdef test -d node_modules
-  all: build
-else
-  all: install-depends build
-endif
+all: build
 
 install-depends: yarn.lock
 	@yarn install --frozen-lockfile
 build:
+ifneq ($(shell test -d node_modules||echo),)
+	@yarn install --frozen-lockfile
+endif
 	@yarn run build
 
 run: .output/ /usr/bin/node
@@ -24,4 +23,6 @@ podman-run: /usr/bin/podman
 .PHONY: clean
 
 clean: 
-	-rm -rf chiblog/.output 
+	-rm -rf .output 
+dist-clean
+	-rm -rf .output node_modules
