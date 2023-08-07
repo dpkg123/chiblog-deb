@@ -10,8 +10,8 @@ install-depends: yarn.lock
 build:
 	@yarn run build
 
-run: chiblog/.output /usr/bin/node
-	node server/index.mjs -p 3000
+run: .output/ /usr/bin/node
+	node .output/server/index.mjs -p 3000
 docker-run: /usr/bin/docker
 	sudo docker run -dit -p 3000:3000 --name my-chiblog-container -e NUXT_CHIBLOG_CONFIG_TYPE=production -e NUXT_CHIBLOG_CONFIG_URL=myurl ghcr.io/chi-net/chiblog
 podman-run: /usr/bin/podman
