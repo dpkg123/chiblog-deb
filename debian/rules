@@ -2,11 +2,11 @@
 
 # See debhelper(7) (uncomment to enable).
 # Output every command that modifies files on the build system.
-#export DH_VERBOSE = 1
+export DH_VERBOSE = 1
 
 
 # See FEATURE AREAS in dpkg-buildflags(1).
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 # See ENVIRONMENT in dpkg-buildflags(1).
 # Package maintainers to append CFLAGS.
@@ -17,7 +17,7 @@
 include /usr/share/dpkg/default.mk
 
 %:
-	dh $@ --parallel
+	dh $@
 
 override_dh_auto_configure:
 	dh_auto_configure -- DEFINES+="VERSION=$(DEB_VERSION_UPSTREAM)"
