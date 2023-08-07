@@ -3,7 +3,12 @@
 # Copyright 2023 dabao1955
 
 .PHONY: all
-all: build
+
+ifdef (test -d node_modules)
+  all: build
+else
+  all: install-depends build
+endif
 
 install-depends: yarn.lock
 	@yarn install --frozen-lockfile
