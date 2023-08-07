@@ -1,0 +1,5 @@
+chiblog (1.2.0-1) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- chihuo2104 <i@chihuo2104.dev>  Mon, 07 Aug 2023 11:42:11 +0800
