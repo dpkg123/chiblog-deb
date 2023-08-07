@@ -24,5 +24,5 @@ podman-run: /usr/bin/podman
 
 clean: 
 	-rm -rf .output 
-dist-clean
+dist-clean:
 	-rm -rf .output node_modules
