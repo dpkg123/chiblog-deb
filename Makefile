@@ -9,7 +9,7 @@ all: build
 install-depends: yarn.lock
 	@yarn install --frozen-lockfile
 build: yarn.lock
-ifneq ($(shell test -d node_modules),)
+ifneq ($(shell test -d node_modules || echo x),)
 	@yarn install --frozen-lockfile
 	@yarn run build
 else
