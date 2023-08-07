@@ -9,13 +9,13 @@
 > Tips: [Podman](https://podman.io/) is strongly recommended rather than Docker, futher information: <https://blog.chihuo2104.dev/posts/comment-fixed-and-hi-podman> (Chinese Simplified Only).
 
 ```shell
-podman run -dit -p 3000:3000 --name my-chiblog-container -e NUXT_CHIBLOG_CONFIG_TYPE=production -e NUXT_CHIBLOG_CONFIG_URL=myurl ghcr.io/chi-net/chiblog
+make podman-run
 ```
 
 use docker instead:
 
 ```shell
-docker run -dit -p 3000:3000 --name my-chiblog-container -e NUXT_CHIBLOG_CONFIG_TYPE=production -e NUXT_CHIBLOG_CONFIG_URL=myurl ghcr.io/chi-net/chiblog
+make docker-run
 ```
 
 And `.env` file is also available to define an environment varible.
