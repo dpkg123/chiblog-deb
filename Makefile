@@ -7,14 +7,8 @@
 all: install-depends build
 
 install-depends: yarn.lock
-	@yarn install --frozen-lockfile
+	@test -d node_modules || yarn install --frozen-lockfile
 build: yarn.lock
-#ifneq ($(shell test -d node_modules || echo x),)
-#	@yarn install --frozen-lockfile
-#	@yarn run build
-#else
-#	@yarn run build
-#endif
 	@yarn run build
 run: .output/ /usr/bin/node
 	node .output/server/index.mjs -p 3000
