@@ -8,8 +8,8 @@ all: install-depends build
 
 install-depends: yarn.lock
 	@test -d node_modules || yarn install --frozen-lockfile
-build: yarn.lock node_modules/
-	test -d .output || yarn run build
+build: node_modules/nuxi/bin/nuxi.mjs
+	test -d .output || ./node_modules/nuxi/bin/nuxi.mjs build
 run: .output/ /usr/bin/node
 	node .output/server/index.mjs -p 3000
 install: .output/ 
