@@ -9,7 +9,7 @@ all: install-depends build
 install-depends: yarn.lock
 	@test -d node_modules || yarn install --frozen-lockfile
 build: yarn.lock node_modules/
-	test -d .output || @yarn run build
+	test -d .output || yarn run build
 run: .output/ /usr/bin/node
 	node .output/server/index.mjs -p 3000
 install: .output/ 
